@@ -8,7 +8,7 @@ import {
   FormLable,
 } from './AddContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts } from 'redux/contactsSlice';
+import { selectContacts } from 'redux/contactsSlice';
 import { addContacts } from 'redux/operations';
 
 const phoneRegExp =
@@ -23,7 +23,7 @@ const ContactSchema = Yup.object().shape({
     .max(10, 'Too long!'),
 });
 export const AddContactForm = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   return (
     <FormContainer>

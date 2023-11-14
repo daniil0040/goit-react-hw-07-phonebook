@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { getContacts, selectErr, selectLoading } from 'redux/contactsSlice';
+import { selectContacts, selectErr, selectLoading } from 'redux/contactsSlice';
 import { AddContactForm } from './AddContactForm/AddContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { ContactListFilter } from './ContactListFilter/ContactListFilter';
@@ -17,7 +17,7 @@ import { fetchContacts } from 'redux/operations';
 // };
 
 export const App = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectErr);
   const dispatch = useDispatch();
